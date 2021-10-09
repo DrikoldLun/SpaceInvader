@@ -14,7 +14,119 @@ Since Java5, you can even specify a variable number of arguments aka varargs whi
 Notice that the varargs parameter "String... strNickNames" must be listed last.  Calling this method would look something like this:
  String[] strReturnValues = someMethod(99, "Jim", "Jamie", "James", "Jamey", "Jimmy", "Jimbo");
 
+R5.6 Parameters and return values
+Argument is a value received by the function while the return value is a value returned by the function
+A method call can have any number of arguments and any number of return values (if using a class or tuple to return)
 
+R5.8 Pseudocode
+let ORD(c) stands for the ASCII value of char c
+String s <- a telephone number with letters in it
+for i from 0 to s.length()-1
+    if s[i] is digit or s[i] == '-'
+        do nothing
+    else
+        digitChar <- (char) (floor((ord(s[i])-ord('A'))/3)+ord('1'))
+        replace s[i] with digitChar
+then s should be the corresponding actual phone number
 
+R5.10 Variable scope
+in the main function, the scope of i is Line 5-7, the scope of b is Line 6-7
+in the function f, the scope of n is Line 12-14, the scope of i is Line 10-14
+in the function g，the scope of a is Line 17-25, the scope of b is Line 19-25, the scope of n is Line 20-23, the scope of i is Line 22-23
 
+R5.14 Pass by value versus pass by reference
+Because the function falseSwap only passes value instead of reference of x,y to the local variable a,b and only changed the value of a,b, this change wouldn't be passed to x,y, so the value of x,y doesn't change
 
+R6.3 Considering loops
+a. 25
+b. 13
+c. 12
+d. Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 10
+e. 11
+f. 25
+g. 12
+h. -1
+
+R6.10 Enhanced for-loop
+a. for (float value:values){total = total + value;}
+b. for (float value:Arrays.copyOfRange(values,1,values.length)){total = total + value;}
+c.  int i = 0;
+    for (float value:values){
+        if (value == target) {
+            return i;
+        }
+        i = i + 1;
+    }
+
+R6.23 Computing runs
+a <- the input array
+maxlen <- 0
+tmplen <- 0
+for i from 0 to a.length-1
+   if (i>0 and a[i]==a[i-1])
+        tmplen <- tmplen + 1
+   else
+        maxlen <- max(tmplen,maxlen)
+        tmplen <- 1
+return maxlen
+
+R6.29 Multi-dimensional arrays
+"values = numbers" means passing the starting address of array "numbers" to local array "values", it wouldn't affect the input array of the function
+instead we should use "for (i=0;i<numbers.length;i++){values[i]=numbers[i]}" to change value in address of each element in array values, by doing so we can get the final altered input array
+
+R6.34 Understanding arrays
+a. False
+b. True
+c. False
+d. True
+e. True
+f. False
+
+R7.1 Exceptions
+If try to open a file for reading that doesn’t exist, an IOException would be thrown
+If try to write to a file that doesn’t exist, the file would be automatically created
+
+R7.6 Throwing and catching
+Catch is used to handle the uncertain condition of codes in try block. Throw is used for exception without try&catch
+
+R7.7 Checked versus unchecked
+The checked exceptions are checked at compile-time like IOException, ClassNotFoundException
+FileInputStream files = new FileInputStream("B:/myfile.txt");
+int k;
+while((k=files.read())!=-1) // Method read() of FileInputStream Class throws a checked IOException
+{
+	System.out.print(k);
+}
+
+the unchecked exceptions are checked at runtime, like ArithmeticException, ArrayIndexOutOfBoundsException
+int i1 = 1;
+int i2 = 0;
+int a = i1/i2; // diving an integer with 0 would throw an unchecked ArithmeticException
+
+we need to declare the checked exception with the throws reserved word
+
+R7.8 Exceptions philosophy in Java
+Because the IndexOutOfBoundsException is an unchecked exception, it can't be handled by throw key word.
+
+R7.11 What is an exception object
+The catch clause gets the reference to the Exception object which can be used to analyze the detail about the root cause of the issue.
+
+R7.15 Scanner exceptions. Explain why these are either checked or unchecked.
+In the following example
+public class ReadFile {
+  public static void main(String[] args) {
+    try {
+      File myObj = new File("filename.txt");
+      Scanner myReader = new Scanner(myObj); //if there is no such file, it will throw a checked IOException
+      for(int i=0;i<1000;i++) {
+        String data = myReader.nextLine(); //if there is no line remained to read, it will throw an unchecked NoSuchElementException
+        System.out.println(data);
+      }
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
+}
+we can see that the Scanner class can throw either a checked or an unchecked exception
