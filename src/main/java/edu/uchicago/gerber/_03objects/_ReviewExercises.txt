@@ -2,6 +2,53 @@
 # Use this file to answer Review Exercises from the Big Java textbook
 #########################################################################
 
+R8.1 Encapsulation
+What is Encapsulation: Encapsulation is a mechanism of wrapping the variables and methods operating on those variables together as a single unit. In encapsulation,
+the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class.
+Why it's useful: The major advantage of encapsulation is data hiding, we can allow the programmer to decide on the access to data and methods
+operating on that data, which is one of the fundamentals of object-oriented programming.
+
+R8.4 Public interface
+What is the public interface of a class: An interface is a reference type in Java, it is a collection of abstract methods.It specifies the functionality
+supported by the class but does not implement any details of the functionality.
+How does it differ from the implementation of a class: (1) The details of the functionality can be implemented in a class but not an interface;
+(2) A class can be instantiated but an interface can not; (3) Interface supports multiple inheritance but the class does not.
+
+R8.7 Instance versus static
+Instance method is the method which requires firstly instantiating its class before it can be called. Static method is the method that can be called without initiating the class
+
+R8.8 Mutator and accessor
+In Java, a mutator method is a method used to set the variable in a class, an accessor method is a method used to get the variable in a class
+
+R8.9 Implicit parameter
+The implicit parameter in Java is the object that the method belongs to, it's passed by specifying the reference or variable of the object defined before the name of the method.
+It's different from an explicit parameter, which is passed when specifying the parameter in the parenthesis of a method call.
+
+R8.10 Implicit parameter
+An instance method can have only one implicit parameter list, and it must be the last parameter list given.
+A static method does not operate on objects, so they have no implicit parameter.
+An instance method can have any number of explicit parameters.
+
+R8.12 Constructors
+A class can have any number of constructors.
+We can't have a class with no constructors, if we don't specify the constructor in the class, JVM will use the default no-args constructor for this class
+If a class has more than one constructor, which of them gets called depends on the number and type of explicit parameters passed to the constructor
+
+R8.16 Instance variables
+The reserved word private can hide the implementation of a class:
+As for the private variables in the class, we can't directly access those variables outside the class, they can be only got/set by calling specific getter/setter function for that variable.
+As for the private methods in the class, they can be only called within the class itself.
+
+R8.19 The this reference
+'this' is a reference variable that refers to the current object
+We can use this to refer the members of a class such as constructors,
+variables and methods in an instance method or a constructor.
+
+R8.20 Zero, null, false, empty String
+Zero is a primitive variable
+Null reference is not a valid object instance, so there is no memory allocated for it. It is simply a value that indicates that the reference is not currently referring to any object
+The value false is a primitive boolean variable
+An empty string is a character sequence of 0 characters
 
 
 
