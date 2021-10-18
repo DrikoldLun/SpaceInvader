@@ -23,7 +23,11 @@ public class ComboLock {
     }
 
     public void turnLeft(int ticks) {
-        dial = (dial - ticks)%40;
+        dial = dial - ticks;
+        while (dial < 0){
+            dial += 40;
+        }
+        dial %= 40;
         if (!open1 && secret1==dial){
             open1 = true;
         }

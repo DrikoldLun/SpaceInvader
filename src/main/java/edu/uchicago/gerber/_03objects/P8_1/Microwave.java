@@ -22,6 +22,6 @@ public class Microwave {
     }
 
     public void start(){
-        System.out.printf("Cooking for %d seconds at level %d", this.time, this.level);
+        System.out.printf("Cooking for %d seconds at level %d\n", this.time, this.level);
     }
 }
