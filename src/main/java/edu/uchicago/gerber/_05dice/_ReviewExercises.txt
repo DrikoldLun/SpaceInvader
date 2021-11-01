@@ -2,8 +2,51 @@
 # Use this file to answer Review Exercises from the Big Java textbook
 #########################################################################
 
+R10.5 Events
+The event object encapsulates the information the event that occurred.
+The event source is the GUI component with which the user interacts.
+The event listener is responsible for generating response to an event.
 
+R10.6 actionPerformed
+The GUI component object calls the actionPerformed method.
+The call occurred just after the user performs an action.
 
+R10.11 Inner class and event-listeners
+Because inner classes work well even if the event handler needs access to private
+instance variables from the enclosing class.
+We can still implement event listeners if there is no inner classes, then the event
+handler needs to use get of set method of the enclosing class to access its instance variables.
 
+R10.14 Object hierarchies
+the method declared in JText: append
+the method inherited from JTextComponent: setText
+the method inherited from JComponent: addAncestorListener
 
+R10.22 Graphic methods
+void drawItalianFlag(Graphics g, int xLeft, int yTop, int width, Color leftcolor, Color rightcolor) {
+    g.setColor(leftcolor);
+    g.fillRect(xLeft, yTop, width / 3, width * 2 / 3);
+    g.setColor(rightcolor);
+    g.fillRect(xLeft + 2 * width / 3, yTop, width / 3, width * 2 / 3);
+    g.setColor(Color.black);
+    g.drawLine(xLeft + width / 3, yTop, xLeft + width * 2 / 3, yTop);
+    g.drawLine(xLeft + width / 3, yTop + width * 2 / 3, xLeft + width * 2 / 3, yTop + width * 2 / 3);
+}
 
+R11.2 Layout managers
+If the size of the container changes the layout manager automatically repositions the components.
+
+R11.11 ButtonGroup
+Because among a certain number of radio buttons we can only choose 1 of them, the choices for each of them exclude others, so we need to take these radio buttons as a whole group, within this group we can only choose 1.
+But when checking different check boxes, the choices for each check box doesn't exclude others, so we can treat them independently without grouping them.
+
+R11.19 Types of Events
+The ActionEvent can cover any event related to Buttons, textField and so on, it uses the ActionListener interface.
+The MouseEvent only refers to several low-level mouse event including pressing, clicking, releasing and so on, it uses the MouseListener interface.
+
+R11.20 Events
+The ActionEvent carries information of event source, event id, the command and modifiers
+Apart from these, the MouseEvent also carries the time of the event, the position of the mouse interaction, the count of the click and the button the mouse interacted with.
+
+R11.21 ActionListener versus MouseListener
+An ActionListener is only interested in one notification: when the action happens. Whereas A MouseListener has multiple methods because there are several potentially interesting mouse events, such as pressing, releasing, or clicking the mouse button.
