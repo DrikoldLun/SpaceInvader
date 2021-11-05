@@ -2,8 +2,74 @@
 # Use this file to answer Review Exercises from the Big Java textbook
 #########################################################################
 
+R12.1 OO Analysis and Design
+1. Gather requirements.
+2. Use CRC cards to find classes, responsibilities, and collaborators.
+3. Use UML diagrams to record class relationships.
+4. Use javadoc to document method behavior.
+5. Implement the program.
 
+R12.2 OO Analysis and Design
+Highlight the nouns in the problem description. Make a list of the nouns.
+Cross out those that don’t seem to be reasonable candidates for classes.
 
+R12.3 OO Analysis and Design
+Make a list of the major tasks that your system needs to fulfill. From those tasks, pick one
+that is not trivial and that is intuitive to you. Find a class that is responsible for carrying out
+that task. Make an index card and write the name and the task on it. Now ask yourself how
+an object of the class can carry out the task. It probably needs help from other objects. Then
+make CRC cards for the classes to which those objects belong and write the responsibilities (methods)
+on them.
+
+R12.8 Relationships
+Class: CashRegister
+Responsibility          Collaborator
+enterPayment            Coin
+
+Class: Coin
+Responsibility          Collaborator
+getValue
+
+R12.9 CRC Quiz
+Class: Quiz
+Responsibility          Collaborator
+Attempt                 Question
+
+Class: Question
+Responsibility          Collaborator
+getDescription
+getAnswer
+
+R12.10 UML Quiz
+see R12_10.uml
+
+R12.11 CRC Cards
+Class: CountriesAnalysor
+Responsibility          Collaborator
+readCountryRecord       Country
+findLargestArea         Country
+findLargestPopulation   Country
+findLargestPopulationdensity Country
+
+Class: Country
+Responsibility          Collaborator
+getArea
+getPopulation
+getPopolationdensity
+
+as for the UML diagram please see R12_11.uml
+as for the javadoc comments please see R12_11
+
+R12.13 UML Diagram
+Class: VendingMachine, CashRegister, Coin, Stock, Product
+For the UML diagram please see R12_13.uml
+
+R12.14 UML Diagram
+Class: Paycheck, Employee, WageCalculator
+For the UML diagram please see R12_14.uml
+
+R12.15 ULM Diagram
+see R12_15.uml
 
 
 

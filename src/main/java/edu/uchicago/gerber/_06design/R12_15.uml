@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/macbookpro/Desktop/21Fall/Java/projava/src/main/java/edu/uchicago/gerber/_06design/R12_15/Invoice.java</OriginalElement>
+  <nodes>
+    <node x="35.25" y="258.0">edu.uchicago.gerber._06design.R12_15.Customer</node>
+    <node x="42.75" y="82.0">edu.uchicago.gerber._06design.R12_15.Product</node>
+    <node x="41.25" y="0.0">edu.uchicago.gerber._06design.R12_15.Address</node>
+    <node x="45.75" y="176.0">edu.uchicago.gerber._06design.R12_15.Invoice</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Customer" target="edu.uchicago.gerber._06design.R12_15.Address" relationship="DEPENDENCY">
+      <point x="32.25" y="-15.0" />
+      <point x="132.0" y="237.0" />
+      <point x="164.25" y="237.0" />
+      <point x="164.25" y="227.0" />
+      <point x="199.5" y="227.0" />
+      <point x="199.5" y="61.0" />
+      <point x="188.8875" y="61.0" />
+      <point x="188.8875" y="51.0" />
+      <point x="129.0" y="51.0" />
+      <point x="29.25" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Invoice" target="edu.uchicago.gerber._06design.R12_15.Product" relationship="TO_ONE">
+      <point x="-27.0" y="-15.0" />
+      <point x="72.75" y="154.0" />
+      <point x="10.5" y="154.0" />
+      <point x="10.5" y="144.0" />
+      <point x="35.25" y="144.0" />
+      <point x="35.25" y="134.0" />
+      <point x="71.25" y="134.0" />
+      <point x="-28.5" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Invoice" target="edu.uchicago.gerber._06design.R12_15.Address" relationship="TO_ONE">
+      <point x="-27.0" y="-15.0" />
+      <point x="72.75" y="154.0" />
+      <point x="10.5" y="154.0" />
+      <point x="10.612499999999997" y="51.0" />
+      <point x="70.5" y="51.0" />
+      <point x="-29.25" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Invoice" target="edu.uchicago.gerber._06design.R12_15.Address" relationship="DEPENDENCY">
+      <point x="27.0" y="-15.0" />
+      <point x="126.75" y="154.0" />
+      <point x="189.0" y="154.0" />
+      <point x="188.8875" y="51.0" />
+      <point x="129.0" y="51.0" />
+      <point x="29.25" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Customer" target="edu.uchicago.gerber._06design.R12_15.Product" relationship="DEPENDENCY">
+      <point x="32.25" y="-15.0" />
+      <point x="132.0" y="237.0" />
+      <point x="164.25" y="237.0" />
+      <point x="164.25" y="134.0" />
+      <point x="128.25" y="134.0" />
+      <point x="28.5" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Product" target="edu.uchicago.gerber._06design.R12_15.Customer" relationship="DEPENDENCY">
+      <point x="28.5" y="15.0" />
+      <point x="128.25" y="134.0" />
+      <point x="164.25" y="134.0" />
+      <point x="164.25" y="237.0" />
+      <point x="132.0" y="237.0" />
+      <point x="32.25" y="-15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Invoice" target="edu.uchicago.gerber._06design.R12_15.Customer" relationship="DEPENDENCY">
+      <point x="27.0" y="15.0" />
+      <point x="126.75" y="227.0" />
+      <point x="164.25" y="227.0" />
+      <point x="164.25" y="237.0" />
+      <point x="132.0" y="237.0" />
+      <point x="32.25" y="-15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Customer" target="edu.uchicago.gerber._06design.R12_15.Invoice" relationship="DEPENDENCY">
+      <point x="32.25" y="-15.0" />
+      <point x="132.0" y="237.0" />
+      <point x="164.25" y="237.0" />
+      <point x="164.25" y="227.0" />
+      <point x="126.75" y="227.0" />
+      <point x="27.0" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Invoice" target="edu.uchicago.gerber._06design.R12_15.Customer" relationship="TO_ONE">
+      <point x="-27.0" y="15.0" />
+      <point x="72.75" y="227.0" />
+      <point x="35.25" y="227.0" />
+      <point x="35.25" y="237.0" />
+      <point x="67.5" y="237.0" />
+      <point x="-32.25" y="-15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Customer" target="edu.uchicago.gerber._06design.R12_15.Invoice" relationship="TO_ONE">
+      <point x="-32.25" y="-15.0" />
+      <point x="67.5" y="237.0" />
+      <point x="35.25" y="237.0" />
+      <point x="35.25" y="227.0" />
+      <point x="72.75" y="227.0" />
+      <point x="-27.0" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Customer" target="edu.uchicago.gerber._06design.R12_15.Address" relationship="TO_ONE">
+      <point x="-32.25" y="-15.0" />
+      <point x="67.5" y="237.0" />
+      <point x="35.25" y="237.0" />
+      <point x="35.25" y="227.0" />
+      <point x="0.0" y="227.0" />
+      <point x="0.0" y="61.0" />
+      <point x="10.612499999999997" y="61.0" />
+      <point x="10.612499999999997" y="51.0" />
+      <point x="70.5" y="51.0" />
+      <point x="-29.25" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Product" target="edu.uchicago.gerber._06design.R12_15.Address" relationship="DEPENDENCY">
+      <point x="28.5" y="-15.0" />
+      <point x="128.25" y="61.0" />
+      <point x="188.8875" y="61.0" />
+      <point x="188.8875" y="51.0" />
+      <point x="129.0" y="51.0" />
+      <point x="29.25" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Customer" target="edu.uchicago.gerber._06design.R12_15.Product" relationship="TO_ONE">
+      <point x="-32.25" y="-15.0" />
+      <point x="67.5" y="237.0" />
+      <point x="35.25" y="237.0" />
+      <point x="35.25" y="134.0" />
+      <point x="71.25" y="134.0" />
+      <point x="-28.5" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Product" target="edu.uchicago.gerber._06design.R12_15.Customer" relationship="TO_ONE">
+      <point x="-28.5" y="15.0" />
+      <point x="71.25" y="134.0" />
+      <point x="35.25" y="134.0" />
+      <point x="35.25" y="237.0" />
+      <point x="67.5" y="237.0" />
+      <point x="-32.25" y="-15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Invoice" target="edu.uchicago.gerber._06design.R12_15.Product" relationship="DEPENDENCY">
+      <point x="27.0" y="-15.0" />
+      <point x="126.75" y="154.0" />
+      <point x="189.0" y="154.0" />
+      <point x="189.0" y="144.0" />
+      <point x="164.25" y="144.0" />
+      <point x="164.25" y="134.0" />
+      <point x="128.25" y="134.0" />
+      <point x="28.5" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_15.Product" target="edu.uchicago.gerber._06design.R12_15.Address" relationship="TO_ONE">
+      <point x="-28.5" y="-15.0" />
+      <point x="71.25" y="61.0" />
+      <point x="10.612499999999997" y="61.0" />
+      <point x="10.612499999999997" y="51.0" />
+      <point x="70.5" y="51.0" />
+      <point x="-29.25" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="100.0" y="144.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

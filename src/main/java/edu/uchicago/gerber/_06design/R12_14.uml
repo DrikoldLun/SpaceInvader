@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/macbookpro/Desktop/21Fall/Java/projava/src/main/java/edu/uchicago/gerber/_06design/R12_14/Paycheck.java</OriginalElement>
+  <nodes>
+    <node x="148.0" y="0.0">edu.uchicago.gerber._06design.R12_14.WageCalculator</node>
+    <node x="92.5" y="90.0">edu.uchicago.gerber._06design.R12_14.Paycheck</node>
+    <node x="0.0" y="0.0">edu.uchicago.gerber._06design.R12_14.Employee</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.uchicago.gerber._06design.R12_14.Paycheck" target="edu.uchicago.gerber._06design.R12_14.Employee" relationship="TO_ONE">
+      <point x="31.75" y="-15.0" />
+      <point x="187.75" y="70.0" />
+      <point x="241.0" y="70.0" />
+      <point x="241.0" y="50.0" />
+      <point x="96.0" y="50.0" />
+      <point x="32.0" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_14.Paycheck" target="edu.uchicago.gerber._06design.R12_14.WageCalculator" relationship="TO_ONE">
+      <point x="31.75" y="-15.0" />
+      <point x="187.75" y="70.0" />
+      <point x="241.0" y="70.0" />
+      <point x="241.0" y="50.0" />
+      <point x="280.0" y="50.0" />
+      <point x="44.0" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_14.Paycheck" target="edu.uchicago.gerber._06design.R12_14.Employee" relationship="DEPENDENCY">
+      <point x="-31.75" y="-15.0" />
+      <point x="124.25" y="70.0" />
+      <point x="59.0" y="70.0" />
+      <point x="59.0" y="60.0" />
+      <point x="32.0" y="60.0" />
+      <point x="-32.0" y="15.0" />
+    </edge>
+    <edge source="edu.uchicago.gerber._06design.R12_14.Paycheck" target="edu.uchicago.gerber._06design.R12_14.WageCalculator" relationship="DEPENDENCY">
+      <point x="-31.75" y="-15.0" />
+      <point x="124.25" y="70.0" />
+      <point x="59.0" y="70.0" />
+      <point x="59.0" y="60.0" />
+      <point x="192.0" y="60.0" />
+      <point x="-44.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="162.0" y="60.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
