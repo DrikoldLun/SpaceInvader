@@ -45,7 +45,6 @@ YodaSpeakRecursive : Create console program that takes a sentence and reverses t
 of the words. For example, if the sentence is "The force is strong with you", The output
 would be "you with strong is force The". Implement this program recursively.
 
-
 E19.5 comma-separated values (you may need to read ahead to generics to complete this)
 E19.6 Transform currencies
 E19.7 Transform strings

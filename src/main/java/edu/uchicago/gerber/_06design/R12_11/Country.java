@@ -9,6 +9,7 @@ public class Country {
      * @return the name of the country
      */
     public String getName() {
+        return null;
     }
 
     /**
@@ -16,6 +17,7 @@ public class Country {
      * @return the area of the country
      */
     public double getArea() {
+        return 0;
     }
 
     /**
@@ -23,6 +25,7 @@ public class Country {
      * @return the population of the country
      */
     public long getPopulation() {
+        return 0;
     }
 
     /**
@@ -30,5 +33,6 @@ public class Country {
      * @return the population density of the country
      */
     public double getPopulationdensity() {
+        return 0;
     }
 }

@@ -2,8 +2,65 @@
 # Use this file to answer Review Exercises from the Big Java textbook
 #########################################################################
 
+R13.1 Terms
+a. Recursion: a method calls itself to solve some problem.
+b. Iteration: sequence through a block of code repeatedly until a specific condition occurs.
+c. Infinite recursion: the function never stops calling itself because there is no halting condition or it's never met.
+d. Recursive helper function: Sometimes, one wants to provide access to an algorithm that’s inherently recursive, but the user-facing
+interface isn’t suitable for recursion for some reason. The recursive helper provides the recursion functionality behind the scenes.
 
+R13.2 Smallest value
+function minindex(A,i)
+    if (i==A.length-1) then
+        return i
+    else
+        index = minindex(A,i+1)
+        return A[i]<=A[index]? i:index // the minimum value is either A[i] or the minimum value of A[i+1..A.length-1]
 
+call minindex(A,0) to find the minimum element index of an array A, then A[minindex(A,0)] is the minimum element in A
 
+R13.4 Sort array of numbers
+function sort(A,i)
+    if (i==A.length-1) then
+        return
+    else
+        index = minindex(A,i)
+        swap A[i] with A[index] // so for each recursion, A[0..i] is sorted
+        sort(A,i+1)
 
+R13.6 Exponents recursively
+function exp(x,n)
+    if (n==0) then // the recursion termination condition
+        return 1
+    else
+        return x*exp(x,n-1) // compute x^n as x*x^(n-1)
 
+R13.8 Factorial recursively
+function factorial(n)
+    if (n==1) then // the recursion termination condition
+        return 1
+    else
+        return n*factorial(n-1) // compute n! as n*(n-1)!
+
+R19.1 operations on Stream<String>
+a. stream.filter(s->s.charAt[0]=='a').count()
+b. stream.filter(s->s.length()>10 && s.charAt[0]=='a').count()
+c. stream.filter(s->s.charAt[0]=='a').limit(100).count() == 100
+
+R19.3 How to read Java8
+for the first one, if there are at least 100 words with length > 10 in the stream the result would be 100, otherwise it would be the number of words with length > 10
+for the second one, the result would be the number of words with length > 10 among the first 100 words in the stream
+
+R19.6 Transforming values
+turn a Stream<Double> into a Stream<String>: stream.map(d->d+"")
+turn a Stream<String> into a Stream<Double>: stream.map(s->Double.parseDouble(s))
+
+R19.11 Terminal operations
+findFirst, findAny, max, min, toArray, collect, forEach, allMatch, anyMatch, noneMatch
+
+R19.12 Collectors
+stream.toArray(T[]::new)
+stream.collect(Collectors.toList())
+stream.collect(Collectors.toSet())
+stream.collect(Collectors.joining(","))
+stream.collect(Collectors.groupingBy(keyFunction, collector))

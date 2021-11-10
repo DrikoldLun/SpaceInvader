@@ -18,6 +18,7 @@ public class CountriesAnalysor {
      * @return the country with largest area
      */
     public Country findLargestArea() {
+        return null;
     }
 
     /**
@@ -25,6 +26,7 @@ public class CountriesAnalysor {
      * @return the country with largest population
      */
     public Country findLargestPopulation() {
+        return null;
     }
 
     /**
@@ -32,5 +34,6 @@ public class CountriesAnalysor {
      * @return the country with largest population density
      */
     public Country findLargestPopulationdensity() {
+        return null;
     }
 }
