@@ -1,0 +1,38 @@
+package model;
+
+import java.util.*;
+import java.util.concurrent.locks.ReentrantLock;
+
+
+/**
+ * Created by ag on 6/17/2015.
+ */
+public class GameOpsList extends LinkedList {
+
+    private ReentrantLock lock;
+
+    public GameOpsList() {
+        this.lock =   new ReentrantLock();
+    }
+
+    public void enqueue(Sprite sprite, CollisionOp.Operation operation) {
+
+       try {
+            lock.lock();
+            addLast(new CollisionOp(sprite, operation));
+        } finally {
+            lock.unlock();
+        }
+    }
+
+
+    public CollisionOp dequeue() {
+        try {
+            lock.lock();
+           return (CollisionOp) super.removeFirst();
+        } finally {
+            lock.unlock();
+        }
+
+    }
+}
