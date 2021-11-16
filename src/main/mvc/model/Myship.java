@@ -1,6 +1,7 @@
 package model;
 
 import controller.Game;
+import controller.Sound;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

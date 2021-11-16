@@ -1,6 +1,7 @@
 package model;
 
 import controller.Game;
+import controller.Sound;
 
 import java.awt.*;
 import java.io.IOException;
@@ -250,8 +251,7 @@ public abstract class Sprite implements Movable {
 		setDim(Game.DIM);
 	}
 
-	public void buff() {
-	}
+	public void buff() {}
 
 	// must be overridden for Falcon and Boss
 	@Override

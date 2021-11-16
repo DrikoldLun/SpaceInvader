@@ -1,6 +1,7 @@
 package model;
 
 import controller.Game;
+import controller.Sound;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -16,6 +17,7 @@ public class Powerup2 extends Powerup{
 
     @Override
     public void buff() {
+        Sound.playSound("shieldup.wav");
         Myship myship = CommandCenter.getInstance().getFalcon();
         myship.setProtectDuration(myship.getProtectDuration()+13500/ Game.ANI_DELAY);
         CommandCenter.getInstance().getOpsList().enqueue(this, CollisionOp.Operation.REMOVE);

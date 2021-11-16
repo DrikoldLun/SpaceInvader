@@ -1,6 +1,7 @@
 package model;
 
 import controller.Game;
+import controller.Sound;
 
 import java.awt.*;
 
@@ -8,6 +9,7 @@ public class Powerup1 extends Powerup{
 
     @Override
     public void buff() {
+        Sound.playSound("pacman_eatghost.wav");
         Myship myship = CommandCenter.getInstance().getFalcon();
         myship.setHealth(Math.min(myship.getHealth()+50, Game.MAXMYHEALTH));
         CommandCenter.getInstance().getOpsList().enqueue(this, CollisionOp.Operation.REMOVE);
