@@ -55,9 +55,9 @@ public class GamePanel extends Panel {
 		g.setColor(Color.white);
 		g.setFont(fnt);
 		if (CommandCenter.getInstance().getScore() != 0) {
-			g.drawString("SCORE :  " + CommandCenter.getInstance().getScore(), nFontWidth, nFontHeight);
+			g.drawString("SCORE/分数 :  " + CommandCenter.getInstance().getScore(), nFontWidth, nFontHeight);
 		} else {
-			g.drawString("NO SCORE", nFontWidth, nFontHeight);
+			g.drawString("NO SCORE/暂无分数", nFontWidth, nFontHeight);
 		}
 	}
 
@@ -78,7 +78,7 @@ public class GamePanel extends Panel {
 		if (!CommandCenter.getInstance().isPlaying()) {
 			displayTextOnScreen();
 		} else if (CommandCenter.getInstance().isPaused()) {
-			strDisplay = "Game Paused";
+			strDisplay = "Game Paused / 游戏暂停";
 			grpOff.drawString(strDisplay,
 					(Game.DIM.width - fmt.stringWidth(strDisplay)) / 2, Game.DIM.height / 4);
 		}
@@ -162,41 +162,41 @@ public class GamePanel extends Panel {
 	// This method draws some text to the middle of the screen before/after a game
 	private void displayTextOnScreen() {
 
-		strDisplay = "GAME OVER";
+		strDisplay = "GAME OVER / 游戏结束";
 		grpOff.drawString(strDisplay,
 				(Game.DIM.width - fmt.stringWidth(strDisplay)) / 2, Game.DIM.height / 4);
 
-		strDisplay = "use the arrow keys to move";
+		strDisplay = "use the arrow keys to move / 方向键移动";
 		grpOff.drawString(strDisplay,
 				(Game.DIM.width - fmt.stringWidth(strDisplay)) / 2, Game.DIM.height / 4
 						+ nFontHeight + 40);
 
-		strDisplay = "use the space bar to fire";
+		strDisplay = "use the space bar to fire / 空格键射击";
 		grpOff.drawString(strDisplay,
 				(Game.DIM.width - fmt.stringWidth(strDisplay)) / 2, Game.DIM.height / 4
 						+ nFontHeight + 80);
 
-		strDisplay = "'S' to Start";
+		strDisplay = "'S' to Start / S键开始游戏";
 		grpOff.drawString(strDisplay,
 				(Game.DIM.width - fmt.stringWidth(strDisplay)) / 2, Game.DIM.height / 4
 						+ nFontHeight + 120);
 
-		strDisplay = "'P' to Pause/Resume";
+		strDisplay = "'P' to Pause/Resume / P键暂停/继续游戏";
 		grpOff.drawString(strDisplay,
 				(Game.DIM.width - fmt.stringWidth(strDisplay)) / 2, Game.DIM.height / 4
 						+ nFontHeight + 160);
 
-		strDisplay = "'Q' to Quit";
+		strDisplay = "'Q' to Quit / Q键退出";
 		grpOff.drawString(strDisplay,
 				(Game.DIM.width - fmt.stringWidth(strDisplay)) / 2, Game.DIM.height / 4
 						+ nFontHeight + 200);
 
-		strDisplay = "use 1-4 to switch your weapon";
+		strDisplay = "use 1-4 to switch your weapon / 1-4键切换武器";
 		grpOff.drawString(strDisplay,
 				(Game.DIM.width - fmt.stringWidth(strDisplay)) / 2, Game.DIM.height / 4
 						+ nFontHeight + 240);
 
-		strDisplay = "'M' to Mute/Unmute the background music";
+		strDisplay = "'M' to Mute/Unmute the background music / M键关闭/播放背景音乐";
 		grpOff.drawString(strDisplay,
 				(Game.DIM.width - fmt.stringWidth(strDisplay)) / 2, Game.DIM.height / 4
 						+ nFontHeight + 280);

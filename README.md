@@ -14,26 +14,27 @@ If you were hit, you will lose health, the green bar at the left bottom corner s
 
 Each time you kill an enemy you get 1 point, after you get over ***50 points***, the final boss will appear, if you beat it you will win
 (Note: If you want to directly test fighting with the boss, you can change Controller/Game.java line 439 to "if (CommandCenter.getInstance().getScore() < 0) {")
+得分超过50开启boss战
 
 The power-up (bounded by green ring) includes adding health and starting shield, it will regularly appear at a random position in the map and you need to control the spaceship to "eat" it to get the buff
 
 ## Keyboard usage
 
-use the arrow keys to move
+use the arrow keys to move / 方向键移动
 
-use the space bar to fire
+use the space bar to fire / 空格键设计
 
-'S' to Start
+'S' to Start / S键开始游戏
 
-'P' to Pause/Resume
+'P' to Pause/Resume / P键开始游戏
 
-'Q' to Quit
+'Q' to Quit / Q键退出游戏
 
-use 1-4 to switch your weapon
+use 1-4 to switch your weapon / 1-4键切换武器
 
-1 - basic bullets
-2 - bullets in 3 directions
-3 - laser
-4 - tracking missiles
+1 - basic bullets / 基本子弹
+2 - bullets in 3 directions / 散弹
+3 - laser / 激光
+4 - tracking missiles / 追踪导弹
 
 'M' to Mute/Unmute the background music
