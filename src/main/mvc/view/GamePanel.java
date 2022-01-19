@@ -20,7 +20,7 @@ public class GamePanel extends Panel {
 	private Graphics grpOff;
 	
 	private GameFrame gmf;
-	private Font fnt = new Font("SansSerif", Font.BOLD, 12);
+	private Font fnt = new Font("SansSerif", Font.PLAIN, 20);
 	private Font fntBig = new Font("SansSerif", Font.BOLD + Font.ITALIC, 36);
 	private Font fntWin = new Font("SansSerif", Font.BOLD + Font.ITALIC, 50);
 	private FontMetrics fmt; 

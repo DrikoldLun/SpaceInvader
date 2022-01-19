@@ -1,7 +1,6 @@
 package model;
 
 import controller.Game;
-import controller.Sound;
 
 import java.awt.*;
 import java.io.IOException;
@@ -216,12 +215,15 @@ public abstract class Sprite implements Movable {
 
 	public void setBullettype(int bullettype) throws IOException {
 		this.bullettype = bullettype;
-		attackgap = switch (bullettype) {
-			case 1 -> new Bullet1(0,this).getAttackgap();
-			case 2 -> new Bullet2(0,this).getAttackgap();
-			case 4 -> new Bullet4(0,this).getAttackgap();
-			default -> 20;
-		};
+		if (bullettype == 1) {
+			attackgap = new Bullet1(0,this).getAttackgap();
+		} else if (bullettype == 2) {
+			attackgap = new Bullet2(0,this).getAttackgap();
+		} else if (bullettype == 4) {
+			attackgap = new Bullet4(0,this).getAttackgap();
+		} else {
+			attackgap = 20;
+		}
 		if (team==Team.FOE)
 			if (isBoss) {
 				attackgap *= 4;
@@ -289,23 +291,21 @@ public abstract class Sprite implements Movable {
 	public void attack() throws IOException {
 		if (bFire) {
 			if (attackcounter==0 || (isBoss && bullettype==3)) {
-				switch (bullettype) {
-					case 1 : CommandCenter.getInstance().getOpsList().enqueue(new Bullet1(doubleX+width/2.,this), CollisionOp.Operation.ADD); break;
-					case 2 :
-						Bullet2 left = new Bullet2(doubleX+width/4.,this);
-						left.setbMoveleft(true);
-						Bullet2 middle = new Bullet2(doubleX+width/2.,this);
-						Bullet2 right = new Bullet2(doubleX+3*width/4.,this);
-						right.setbMoveright(true);
-						CommandCenter.getInstance().getOpsList().enqueue(left, CollisionOp.Operation.ADD);
-						CommandCenter.getInstance().getOpsList().enqueue(middle, CollisionOp.Operation.ADD);
-						CommandCenter.getInstance().getOpsList().enqueue(right, CollisionOp.Operation.ADD);
-						break;
-
-					case 3 : laser = new Bullet3(doubleX+width/2.,this); break;
-
-					case 4 : CommandCenter.getInstance().getOpsList().enqueue(new Bullet4(doubleX+width/2.,this), CollisionOp.Operation.ADD); break;
-					default : break;
+				if (bullettype == 1) {
+					CommandCenter.getInstance().getOpsList().enqueue(new Bullet1(doubleX + width / 2., this), CollisionOp.Operation.ADD);
+				} else if (bullettype == 2) {
+					Bullet2 left = new Bullet2(doubleX + width / 4., this);
+					left.setbMoveleft(true);
+					Bullet2 middle = new Bullet2(doubleX + width / 2., this);
+					Bullet2 right = new Bullet2(doubleX + 3 * width / 4., this);
+					right.setbMoveright(true);
+					CommandCenter.getInstance().getOpsList().enqueue(left, CollisionOp.Operation.ADD);
+					CommandCenter.getInstance().getOpsList().enqueue(middle, CollisionOp.Operation.ADD);
+					CommandCenter.getInstance().getOpsList().enqueue(right, CollisionOp.Operation.ADD);
+				} else if (bullettype == 3) {
+					laser = new Bullet3(doubleX+width/2.,this);
+				} else if (bullettype == 4) {
+					CommandCenter.getInstance().getOpsList().enqueue(new Bullet4(doubleX+width/2.,this), CollisionOp.Operation.ADD);
 				}
 			} else if (!isBoss && attackcounter>4 && bullettype==3 && team==Team.FOE) {
 				laser = null;

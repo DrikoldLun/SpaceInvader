@@ -384,13 +384,17 @@ public class Game implements Runnable, KeyListener {
 		int xshift = R.nextInt(DIM.width-Math.min(num,5)*70+11);
 		Foe foe;
 		for(int i=0;i<num;i++) {
-			foe = switch (foetype) {
-				case 1 -> new Foe1();
-				case 2 -> new Foe2();
-				case 3 -> new Foe3();
-				case 4 -> new Foe4();
-				default -> null;
-			};
+			if (foetype == 1) {
+				foe = new Foe1();
+			} else if (foetype == 2) {
+				foe = new Foe2();
+			} else if (foetype == 3) {
+				foe = new Foe3();
+			} else if (foetype == 4) {
+				foe = new Foe4();
+			} else {
+				foe = null;
+			}
 			if (foe!=null) {
 				foe.setDoubleX(foe.getDoubleX()+xshift+i%5*(foe.getWidth()+20));
 				foe.setDoubleY(foe.getDoubleY()-i/5*(foe.getHeight()+10)-yshift);
@@ -412,11 +416,12 @@ public class Game implements Runnable, KeyListener {
 
 	private void spawnPowerup() throws IOException {
 		int poweruptype = R.nextInt(2)+1;
-		Powerup powerup = switch (poweruptype) {
-			case 1 -> new Powerup1();
-			case 2 -> new Powerup2();
-			default -> null;
-		};
+		Powerup powerup = null;
+		if (poweruptype == 1) {
+			powerup = new Powerup1();
+		} else if (poweruptype == 2) {
+			powerup = new Powerup2();
+		}
 		if (powerup!=null)
 			CommandCenter.getInstance().getOpsList().enqueue(powerup, CollisionOp.Operation.ADD);
 	}
@@ -444,7 +449,7 @@ public class Game implements Runnable, KeyListener {
 			//if (CommandCenter.getInstance().getFalcon() !=null)
 				//CommandCenter.getInstance().getFalcon().setProtected(true);
 			if (!CommandCenter.getInstance().isbWin()) {
-				if (CommandCenter.getInstance().getScore() < 100) {
+				if (CommandCenter.getInstance().getScore() < 50) {
 					spawnFoesgrp();
 				} else {
 					spawnBoss();
